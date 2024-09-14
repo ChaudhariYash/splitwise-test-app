@@ -1,15 +1,22 @@
-import { Text, View } from "react-native";
+import React from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Splash from"./screen/Splash";
+import Welcome from './screen/welcome';
 
-export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>hello start </Text>
-    </View>
-  );
-}
+
+
+const Stack = createNativeStackNavigator();
+
+  const App = () => {
+    return(
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{headerShown:false}}>
+            <Stack.Screen name="Splash" component={Splash} />
+            <Stack.Screen name="welcome" component={Welcome} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    )
+  }
+
+  export default App;
