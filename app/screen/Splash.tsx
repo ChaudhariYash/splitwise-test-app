@@ -1,16 +1,16 @@
-// import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { useEffect } from "react";
 import {View,Text,Image,StyleSheet} from 'react-native';
 
 const Splash = () =>{
     
-    // const navigation = useNavigation();
+    const navigation = useNavigation();
     
-    // useEffect(()=>{
-    //     setTimeout(()=> {
-    //         navigation.navigate("welcome");
-    //     },2000);
-    // },[]);
+    useEffect(()=>{
+        setTimeout(()=> {
+            navigation.navigate("welcome");
+        },2000);
+    },[]);
     return(
         <View  style={styles.container}>
             
